@@ -1,0 +1,22 @@
+//
+//  QuestionStrategy.swift
+//  RabbleWabble_MVC
+//
+//  Created by 辛忠翰 on 2018/10/31.
+//  Copyright © 2018 辛忠翰. All rights reserved.
+//
+
+public protocol QuestionStrategy: class{
+    var title: String {get}
+    var correctCount: Int {get}
+    var incorrectCount: Int {get}
+    
+    func advanceToNextQuestion() -> Bool
+    
+    func currentQuestion() -> Question
+    
+    func markQuestionCorrect(_ question: Question)
+    func markQuestionIncorrect(_ question: Question)
+    
+    func questionIndexTitle() -> String
+}
